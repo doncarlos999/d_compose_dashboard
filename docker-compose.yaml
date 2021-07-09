@@ -1,10 +1,10 @@
 version: "3.9"
 services:
-    apache:
-        build: docker/apache2
+    nginx:
+        build: docker/nginx
         ports:
-            - "80:80"
-            - "79:79"
+            - "8082:8082"
+            - "8081:8081"
     streamlit:
         build: docker/streamlit
     cellxgene:
