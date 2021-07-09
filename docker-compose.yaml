@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+    apache:
+        build: docker/apache2
+        ports:
+            - "80:80"
+            - "79:79"
+    streamlit:
+        build: docker/streamlit
+    cellxgene:
+        image: cward999/cellxgene-vip-gateway:latest
