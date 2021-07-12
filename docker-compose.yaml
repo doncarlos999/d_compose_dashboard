@@ -1,11 +1,15 @@
-version: "3.9"
+version: "3"
 services:
     nginx:
-        build: docker/nginx
+        image: cward999/nginx:kube
         ports:
-            - "8082:8082"
-            - "8081:8081"
+            - "80:80"
+            - "81:81"
     streamlit:
-        build: docker/streamlit
+        image: cward999/streamlit:kube
+        expose:
+            - 8501
     cellxgene:
         image: cward999/cellxgene-vip-gateway:latest
+        expose:
+            - 3838
