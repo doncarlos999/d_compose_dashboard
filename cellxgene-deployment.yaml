@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: cellxgene
+  name: cellxgene
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: cellxgene
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: cellxgene
+    spec:
+      containers:
+        - image: cward999/cellxgene-vip-gateway:latest
+          name: cellxgene
+          ports:
+            - containerPort: 3838
+          resources: {}
+      restartPolicy: Always
+status: {}

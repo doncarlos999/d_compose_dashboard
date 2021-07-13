@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: cellxgene
+  name: cellxgene
+spec:
+  ports:
+    - name: "3838"
+      port: 3838
+      targetPort: 3838
+  selector:
+    io.kompose.service: cellxgene
+status:
+  loadBalancer: {}
