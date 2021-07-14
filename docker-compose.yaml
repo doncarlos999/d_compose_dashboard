@@ -4,7 +4,6 @@ services:
         image: cward999/nginx:kube
         ports:
             - "80:80"
-            - "81:81"
     streamlit:
         image: cward999/streamlit:kube
         expose:
